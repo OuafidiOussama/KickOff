@@ -1,12 +1,22 @@
 import { View, Text, StyleSheet, Pressable, Image } from 'react-native'
 import React from 'react'
 import { Foundation } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
+import { useDispatch } from 'react-redux';
+import { getMatchById } from '../../redux/matches';
+import moment from 'moment';
 
 export default function matchCard({match}) {
+  const {navigate} = useNavigation()
+  const dispatch = useDispatch()
+  navigateToDetails = (matchId)=>{
+    dispatch(getMatchById(matchId))
+    navigate("Match Details")
+  }
   const {item} = match
   return (
     <View style={styles.imageBackground}>
-            <Pressable style={styles.pressable}>
+            <Pressable style={styles.pressable} onPress={()=>navigateToDetails(item.id)}>
               <View style={styles.leagueinfo}>
                 <View style={styles.infoLeague}>
                   <Image
@@ -51,7 +61,7 @@ export default function matchCard({match}) {
 
               <View style={styles.temp}>
                 <Text style={styles.textTemp}>
-                  {new Date(item.startTimestamp * 1000).toLocaleString()}
+                  {moment(item.startTimestamp*1000).format('LLL')}
                 </Text>
               </View>
             </Pressable>

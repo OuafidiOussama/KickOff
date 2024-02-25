@@ -2,6 +2,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 const initialState = {
   matches: [],
+  match: null,
   status: "idle",
   error: null,
 };
@@ -14,9 +15,9 @@ export const getMatches = createAsyncThunk(
         `https://api.sofascore.com/api/v1/sport/football/scheduled-events/${date}`
       );
       if (!response.ok) {
-        throw new Error("Failed to fetch matches");
+        throw new Error("Failed to get all matches");
       }
-      
+
       const data = await response.json();
       return data.events;
     } catch (error) {
@@ -24,12 +25,31 @@ export const getMatches = createAsyncThunk(
     }
   }
 );
+export const getMatchById = createAsyncThunk(
+  "matches/getMatchById",
+  async (matchId, thunkAPI) => {
+    try {
+      const response = await fetch(
+        `https://api.sofascore.com/api/v1/event/${matchId}`
+      );
+      if (!response.ok) {
+        throw new Error("Failed to get match");
+      }
+      
+      const data = await response.json();
+      return data.event;
+    } catch (error) {
+      return thunkAPI.rejectWithValue({ error: error.message });
+    }
+  }
+);
+
 const matches = createSlice({
   name: "matches",
   initialState,
   reducers: {
     clearMatch: (state) => {
-      state.oneMatche = null;
+      state.match = null;
     },
   },
   extraReducers: (builder) => {
@@ -47,6 +67,18 @@ const matches = createSlice({
         state.status = "failed";
         state.error = action.payload.error;
       })
+      .addCase(getMatchById.pending, (state) => {
+        state.status = "loading";
+        state.error = null;
+      })
+      .addCase(getMatchById.fulfilled, (state, action) => {
+        state.status = "success";
+        state.match = action.payload;
+      })
+      .addCase(getMatchById.rejected, (state, action) => {
+        state.status = "failed";
+        state.error = action.payload.error;
+      });
   },
 });
 export const { clearMatch } = matches.actions;
