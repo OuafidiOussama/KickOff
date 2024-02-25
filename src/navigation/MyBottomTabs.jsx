@@ -9,7 +9,7 @@ import { useNavigation } from "@react-navigation/native";
 const Tab = createBottomTabNavigator();
 
 export default function MyBottomTabs() {
-    const {navigate} = useNavigation();
+  const { navigate } = useNavigation();
   return (
     <Tab.Navigator
       screenOptions={{
@@ -21,14 +21,14 @@ export default function MyBottomTabs() {
         headerTitleStyle: {
           fontWeight: "bold",
         },
-        tabBarActiveTintColor: '#E493B3',
+        tabBarActiveTintColor: "#E493B3",
         headerRight: () => (
           <AntDesign
             name="heart"
             size={30}
             color="#E30B5C"
             style={{ marginRight: 20 }}
-            onPress={()=>navigate('My Favorites')}
+            onPress={() => navigate("My Favorites")}
           />
         ),
       }}

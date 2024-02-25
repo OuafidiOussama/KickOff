@@ -11,13 +11,14 @@ export default function Navigation() {
   return (
     <NavigationContainer>
       <Stack.Navigator
-      screenOptions={{
-        headerShown: true,
-        headerStyle: {
-          backgroundColor: "#E30B5C",
-        },
-        headerTintColor: "white",
-      }}>
+        screenOptions={{
+          headerShown: true,
+          headerStyle: {
+            backgroundColor: "#E30B5C",
+          },
+          headerTintColor: "white",
+        }}
+      >
         <Stack.Screen
           name="Home"
           component={MyBottomTabs}

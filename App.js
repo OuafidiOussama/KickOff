@@ -13,5 +13,5 @@ export default function App() {
     <Provider store={store}>
       <Navigation />
     </Provider>
-  )
+  );
 }

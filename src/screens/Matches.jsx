@@ -4,7 +4,6 @@ import { useDispatch } from "react-redux";
 import { clearMatch } from "../redux/matches";
 import MatchesContainer from "../components/MatchesContainer";
 
-
 export default function Matches() {
   const dispatch = useDispatch();
 
@@ -26,6 +25,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     resizeMode: "cover",
     justifyContent: "center",
-    alignItems: "center"
+    alignItems: "center",
   },
 });

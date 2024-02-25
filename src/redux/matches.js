@@ -3,6 +3,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 const initialState = {
   matches: [],
   match: null,
+  players: [],
   status: "idle",
   error: null,
 };
@@ -35,9 +36,27 @@ export const getMatchById = createAsyncThunk(
       if (!response.ok) {
         throw new Error("Failed to get match");
       }
-      
+
       const data = await response.json();
       return data.event;
+    } catch (error) {
+      return thunkAPI.rejectWithValue({ error: error.message });
+    }
+  }
+);
+export const getPlayerById = createAsyncThunk(
+  "players/getPlayerById",
+  async (matchID, thunkAPI) => {
+    try {
+      const response = await fetch(
+        `https://api.sofascore.com/api/v1/event/${matchID}/incidents`
+      );
+      if (!response.ok) {
+        throw new Error("Failed to get players");
+      }
+
+      const data = await response.json();
+      return data.incidents;
     } catch (error) {
       return thunkAPI.rejectWithValue({ error: error.message });
     }
@@ -61,7 +80,6 @@ const matches = createSlice({
       .addCase(getMatches.fulfilled, (state, action) => {
         state.status = "success";
         state.matches = action.payload;
-      
       })
       .addCase(getMatches.rejected, (state, action) => {
         state.status = "failed";
@@ -76,6 +94,18 @@ const matches = createSlice({
         state.match = action.payload;
       })
       .addCase(getMatchById.rejected, (state, action) => {
+        state.status = "failed";
+        state.error = action.payload.error;
+      })
+      .addCase(getPlayerById.pending, (state) => {
+        state.status = "loading";
+        state.error = null;
+      })
+      .addCase(getPlayerById.fulfilled, (state, action) => {
+        state.status = "success";
+        state.players = action.payload;
+      })
+      .addCase(getPlayerById.rejected, (state, action) => {
         state.status = "failed";
         state.error = action.payload.error;
       });
