@@ -12,7 +12,7 @@ export default function matchCard({ match }) {
   navigateToDetails = (matchId) => {
     dispatch(getMatchById(matchId));
     dispatch(getPlayerById(matchId));
-    navigate("Match Details");
+    navigate("Match Details", {matchId});
   };
   const { item } = match;
   return (
@@ -25,11 +25,11 @@ export default function matchCard({ match }) {
           <View style={styles.infoLeague}>
             <Image
               source={{
-                uri: `https://api.sofascore.app/api/v1/unique-tournament/${item.tournament.uniqueTournament.id}/image`,
+                uri: `https://api.sofascore.app/api/v1/unique-tournament/${item?.tournament.uniqueTournament.id}/image`,
               }}
               style={styles.imageTour}
             />
-            <Text style={styles.leagueName}>{item.tournament.name}</Text>
+            <Text style={styles.leagueName}>{item?.tournament.name}</Text>
           </View>
           <Foundation name="star" size={24} color="gray" />
         </View>

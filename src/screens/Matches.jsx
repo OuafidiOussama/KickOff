@@ -1,30 +1,30 @@
-import { View, Pressable, Image, Text, StyleSheet } from "react-native";
+import { View, Text } from "react-native";
 import React, { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { clearMatch } from "../redux/matches";
-import MatchesContainer from "../components/MatchesContainer";
+import { getLeagues } from "../redux/leagues";
+import FilterInput from "../components/FilterInput";
 
 export default function Matches() {
   const dispatch = useDispatch();
-
+  const {status,leagues} = useSelector((state) => state.Leagues);
   useEffect(() => {
+    dispatch(getLeagues())
     return () => {
       dispatch(clearMatch());
     };
   }, []);
-  return (
-    <View style={styles.background}>
-      <MatchesContainer />
-    </View>
-  );
+  if(status === 'loading' ){
+    return(<View>
+      <Text>Loading ...</Text>
+    </View>)
+  }else if(status === 'success'){
+    return <FilterInput leagues={leagues} />;
+  }else{
+    return(<View>
+      <Text>Failed</Text>
+    </View>)
+  }
 }
 
-const styles = StyleSheet.create({
-  background: {
-    flex: 1,
-    backgroundColor: "#fff",
-    resizeMode: "cover",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-});
+
