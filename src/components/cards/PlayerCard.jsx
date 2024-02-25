@@ -1,11 +1,17 @@
 import { View, Text, Pressable, StyleSheet, Image } from 'react-native'
 import React from 'react'
+import { useNavigation } from '@react-navigation/native';
 
 export default function PlayerCard({player}) {
+  const {navigate} = useNavigation()
+  navigateToPlayer = (id) =>{
+    navigate('Player Details', {playerId: id})
+  }
   return (
     <View style={styles.container}>
         <View>
           <Pressable
+            onPress={() => navigateToPlayer(player.id)}
             style={styles.pressable}
           >
             <Image

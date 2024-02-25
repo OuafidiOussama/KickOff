@@ -4,6 +4,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import MyBottomTabs from "../navigation/MyBottomTabs";
 import MyFavorites from "../screens/MyFavorites";
 import MatchDetails from "../screens/MatchDetails";
+import PlayerDetails from "../screens/PlayerDetails";
 
 const Stack = createNativeStackNavigator();
 
@@ -32,6 +33,11 @@ export default function Navigation() {
         <Stack.Screen
           name="Match Details"
           component={MatchDetails}
+          options={{ headerShown: true }}
+        />
+        <Stack.Screen
+          name="Player Details"
+          component={PlayerDetails}
           options={{ headerShown: true }}
         />
       </Stack.Navigator>
