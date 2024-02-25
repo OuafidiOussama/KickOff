@@ -1,5 +1,4 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import axios from 'axios'
 
 const initialState = {
   matches: [],
@@ -7,13 +6,15 @@ const initialState = {
   error: null,
 };
 
-export const getMatches = createAsyncThunk( 
+export const getMatches = createAsyncThunk(
   "matches/getMatches",
   async (date, thunkAPI) => {
     try {
-      const response = await axios.get(`https://api.sofascore.com/api/v1/sport/football/scheduled-events/${date}`)
+      const response = await fetch(
+        `https://api.sofascore.com/api/v1/sport/football/scheduled-events/${date}`
+      );
       if (!response.ok) {
-        throw new Error("Failed to get matches");
+        throw new Error("Failed to fetch matches");
       }
       
       const data = await response.json();

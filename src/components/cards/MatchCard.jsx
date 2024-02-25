@@ -2,20 +2,21 @@ import { View, Text, StyleSheet, Pressable, Image } from 'react-native'
 import React from 'react'
 import { Foundation } from '@expo/vector-icons';
 
-export default function matchCard() {
+export default function matchCard({match}) {
+  const {item} = match
   return (
     <View style={styles.imageBackground}>
-            <Pressable onPress={() => handlClick(item.id)} style={styles.pressable}>
+            <Pressable style={styles.pressable}>
               <View style={styles.leagueinfo}>
                 <View style={styles.infoLeague}>
-                <Image
-                  source={{
-                    uri: `https://api.sofascore.app/api/v1/unique-tournament/1/image`,
-                  }}
-                  style={styles.imageTour}
-                  />
-                <Text style={styles.leagueName}>Tournament Name</Text>
-                  </View>
+                  <Image
+                    source={{
+                      uri: `https://api.sofascore.app/api/v1/unique-tournament/${item.tournament.uniqueTournament.id}/image`,
+                    }}
+                    style={styles.imageTour}
+                    />
+                  <Text style={styles.leagueName}>{item.tournament.name}</Text>
+                </View>
                 <Foundation name="star" size={24} color="gray" />
               </View>
               <View style={styles.teams}>
@@ -24,33 +25,33 @@ export default function matchCard() {
                   <View style={styles.team}>
                     <Image
                       source={{
-                        uri: `https://api.sofascore.app/api/v1/team/2/image`,
+                        uri: `https://api.sofascore.app/api/v1/team/${item.homeTeam.id}/image`,
                       }}
                       style={styles.image}
                     />
-                    <Text style={styles.nameTeam}>Team Name</Text>
+                    <Text style={styles.nameTeam}>{item.homeTeam.name}</Text>
                   </View>
                 </View>
                 <Text style={styles.resultat}>
-                  <Text>0</Text> -
-                  <Text> 0</Text>
+                  <Text>{item.homeScore.display}</Text> -
+                  <Text> {item.awayScore.display}</Text>
                 </Text>
                 <View style={styles.match}>
                   <View style={styles.team}>
                     <Image
                       source={{
-                        uri: `https://api.sofascore.app/api/v1/team/3/image`,
+                        uri: `https://api.sofascore.app/api/v1/team/${item.awayTeam.id}/image`,
                       }}
                       style={styles.image}
                     />
-                    <Text style={styles.nameTeam}>Team Name</Text>
+                    <Text style={styles.nameTeam}>{item.awayTeam.name}</Text>
                   </View>
                 </View>
               </View>
 
               <View style={styles.temp}>
                 <Text style={styles.textTemp}>
-                  Date
+                  {new Date(item.startTimestamp * 1000).toLocaleString()}
                 </Text>
               </View>
             </Pressable>
@@ -80,8 +81,6 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
-    justifyItems: "center",
-    gap: 10,
   },
   temp: {
     flexDirection: "row",
@@ -99,12 +98,9 @@ const styles = StyleSheet.create({
     fontSize: 15,
     color: "#bcbcbc",
   },
-
-
   image: {
     width: 40,
     height: 40,
-    borderRadius: 25,
   },
   team: {
     flexDirection: "column",
@@ -129,6 +125,8 @@ const styles = StyleSheet.create({
     fontSize: 15,
     textAlign: "center",
     marginBottom: 10,
+    width: "80%"
+
   },
   leagueinfo: {
     flexDirection: "row",
