@@ -1,0 +1,675 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PlayerDetailsContainer /> renders correctly when player data is available 1`] = `
+<RCTScrollView>
+  <View>
+    <View
+      style={
+        {
+          "alignItems": "center",
+          "display": "flex",
+          "flexDirection": "column",
+          "gap": 40,
+          "height": "100%",
+        }
+      }
+    >
+      <View
+        style={
+          {
+            "alignItems": "center",
+            "backgroundColor": "#5b8db0",
+            "borderBottomEndRadius": 40,
+            "borderBottomStartRadius": 40,
+            "display": "flex",
+            "padding": 30,
+            "shadowColor": "black",
+            "shadowOffset": {
+              "height": 12,
+              "width": 0,
+            },
+            "shadowOpacity": 0.5,
+            "width": "100%",
+          }
+        }
+      >
+        <Image
+          source={
+            {
+              "uri": "https://static.footballtransfers.com/resources/players/506100.png",
+            }
+          }
+          style={
+            {
+              "height": 150,
+              "marginBottom": 10,
+              "width": 150,
+            }
+          }
+        />
+        <Text
+          style={
+            {
+              "color": "white",
+              "fontSize": 20,
+              "fontWeight": "bold",
+            }
+          }
+        >
+          Messi
+        </Text>
+      </View>
+      <View
+        style={
+          {
+            "alignItems": "center",
+            "display": "flex",
+            "flexDirection": "row",
+            "flexWrap": "wrap",
+            "gap": 20,
+            "justifyContent": "center",
+          }
+        }
+      >
+        <Image
+          source={
+            {
+              "uri": "https://static.footballtransfers.com/resources/teams/48.png",
+            }
+          }
+          style={
+            {
+              "height": "120%",
+              "opacity": 0.2,
+              "position": "absolute",
+              "width": "100%",
+            }
+          }
+        />
+        <View
+          style={
+            {
+              "backgroundColor": "#5b8db0",
+              "borderRadius": 40,
+              "marginTop": 20,
+              "padding": 20,
+              "shadowColor": "black",
+              "shadowOffset": {
+                "height": 12,
+                "width": 4,
+              },
+              "shadowOpacity": 0.6,
+              "width": "40%",
+            }
+          }
+        >
+          <Text
+            style={
+              {
+                "color": "white",
+                "fontSize": 18,
+                "fontWeight": "bold",
+                "marginBottom": 10,
+                "textAlign": "center",
+              }
+            }
+          >
+            Position
+          </Text>
+          <Text
+            style={
+              {
+                "color": "black",
+                "textAlign": "center",
+              }
+            }
+          >
+             
+            FW
+          </Text>
+        </View>
+        <View
+          style={
+            {
+              "backgroundColor": "#5b8db0",
+              "borderRadius": 40,
+              "marginTop": 20,
+              "padding": 20,
+              "shadowColor": "black",
+              "shadowOffset": {
+                "height": 12,
+                "width": 4,
+              },
+              "shadowOpacity": 0.6,
+              "width": "40%",
+            }
+          }
+        >
+          <Text
+            style={
+              {
+                "color": "white",
+                "fontSize": 18,
+                "fontWeight": "bold",
+                "marginBottom": 10,
+                "textAlign": "center",
+              }
+            }
+          >
+            Age
+          </Text>
+          <Text
+            style={
+              {
+                "color": "black",
+                "textAlign": "center",
+              }
+            }
+          >
+             
+            25
+          </Text>
+        </View>
+        <View
+          style={
+            {
+              "backgroundColor": "#5b8db0",
+              "borderRadius": 40,
+              "marginTop": 20,
+              "padding": 20,
+              "shadowColor": "black",
+              "shadowOffset": {
+                "height": 12,
+                "width": 4,
+              },
+              "shadowOpacity": 0.6,
+              "width": "40%",
+            }
+          }
+        >
+          <Text
+            style={
+              {
+                "color": "white",
+                "fontSize": 18,
+                "fontWeight": "bold",
+                "marginBottom": 10,
+                "textAlign": "center",
+              }
+            }
+          >
+            National Team
+          </Text>
+          <Text
+            style={
+              {
+                "color": "black",
+                "textAlign": "center",
+              }
+            }
+          >
+             
+            Morroco
+          </Text>
+        </View>
+        <View
+          style={
+            {
+              "backgroundColor": "#5b8db0",
+              "borderRadius": 40,
+              "marginTop": 20,
+              "padding": 20,
+              "shadowColor": "black",
+              "shadowOffset": {
+                "height": 12,
+                "width": 4,
+              },
+              "shadowOpacity": 0.6,
+              "width": "40%",
+            }
+          }
+        >
+          <Text
+            style={
+              {
+                "color": "white",
+                "fontSize": 18,
+                "fontWeight": "bold",
+                "marginBottom": 10,
+                "textAlign": "center",
+              }
+            }
+          >
+            Team
+          </Text>
+          <Text
+            style={
+              {
+                "color": "black",
+                "textAlign": "center",
+              }
+            }
+          >
+             
+            Team
+          </Text>
+        </View>
+        <View
+          style={
+            {
+              "backgroundColor": "#5b8db0",
+              "borderRadius": 40,
+              "marginTop": 20,
+              "padding": 20,
+              "shadowColor": "black",
+              "shadowOffset": {
+                "height": 12,
+                "width": 4,
+              },
+              "shadowOpacity": 0.6,
+              "width": "40%",
+            }
+          }
+        >
+          <Text
+            style={
+              {
+                "color": "white",
+                "fontSize": 18,
+                "fontWeight": "bold",
+                "marginBottom": 10,
+                "textAlign": "center",
+              }
+            }
+          >
+            Skill
+          </Text>
+          <Text
+            style={
+              {
+                "color": "black",
+                "textAlign": "center",
+              }
+            }
+          >
+            Excellent
+          </Text>
+        </View>
+        <View
+          style={
+            {
+              "backgroundColor": "#5b8db0",
+              "borderRadius": 40,
+              "marginTop": 20,
+              "padding": 20,
+              "shadowColor": "black",
+              "shadowOffset": {
+                "height": 12,
+                "width": 4,
+              },
+              "shadowOpacity": 0.6,
+              "width": "40%",
+            }
+          }
+        >
+          <Text
+            style={
+              {
+                "color": "white",
+                "fontSize": 18,
+                "fontWeight": "bold",
+                "marginBottom": 10,
+                "textAlign": "center",
+              }
+            }
+          >
+            Value
+          </Text>
+          <Text
+            style={
+              {
+                "color": "black",
+                "textAlign": "center",
+              }
+            }
+          >
+            $10M
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+</RCTScrollView>
+`;
+
+exports[`<PlayerDetailsContainer /> renders loading text when player data is not available 1`] = `
+<RCTScrollView>
+  <View>
+    <View
+      style={
+        {
+          "alignItems": "center",
+          "display": "flex",
+          "flexDirection": "column",
+          "gap": 40,
+          "height": "100%",
+        }
+      }
+    >
+      <View
+        style={
+          {
+            "alignItems": "center",
+            "backgroundColor": "#5b8db0",
+            "borderBottomEndRadius": 40,
+            "borderBottomStartRadius": 40,
+            "display": "flex",
+            "padding": 30,
+            "shadowColor": "black",
+            "shadowOffset": {
+              "height": 12,
+              "width": 0,
+            },
+            "shadowOpacity": 0.5,
+            "width": "100%",
+          }
+        }
+      >
+        <Image
+          source={
+            {
+              "uri": "undefined",
+            }
+          }
+          style={
+            {
+              "height": 150,
+              "marginBottom": 10,
+              "width": 150,
+            }
+          }
+        />
+        <Text
+          style={
+            {
+              "color": "white",
+              "fontSize": 20,
+              "fontWeight": "bold",
+            }
+          }
+        />
+      </View>
+      <View
+        style={
+          {
+            "alignItems": "center",
+            "display": "flex",
+            "flexDirection": "row",
+            "flexWrap": "wrap",
+            "gap": 20,
+            "justifyContent": "center",
+          }
+        }
+      >
+        <Image
+          source={
+            {
+              "uri": "undefined",
+            }
+          }
+          style={
+            {
+              "height": "120%",
+              "opacity": 0.2,
+              "position": "absolute",
+              "width": "100%",
+            }
+          }
+        />
+        <View
+          style={
+            {
+              "backgroundColor": "#5b8db0",
+              "borderRadius": 40,
+              "marginTop": 20,
+              "padding": 20,
+              "shadowColor": "black",
+              "shadowOffset": {
+                "height": 12,
+                "width": 4,
+              },
+              "shadowOpacity": 0.6,
+              "width": "40%",
+            }
+          }
+        >
+          <Text
+            style={
+              {
+                "color": "white",
+                "fontSize": 18,
+                "fontWeight": "bold",
+                "marginBottom": 10,
+                "textAlign": "center",
+              }
+            }
+          >
+            Position
+          </Text>
+          <Text
+            style={
+              {
+                "color": "black",
+                "textAlign": "center",
+              }
+            }
+          >
+             
+          </Text>
+        </View>
+        <View
+          style={
+            {
+              "backgroundColor": "#5b8db0",
+              "borderRadius": 40,
+              "marginTop": 20,
+              "padding": 20,
+              "shadowColor": "black",
+              "shadowOffset": {
+                "height": 12,
+                "width": 4,
+              },
+              "shadowOpacity": 0.6,
+              "width": "40%",
+            }
+          }
+        >
+          <Text
+            style={
+              {
+                "color": "white",
+                "fontSize": 18,
+                "fontWeight": "bold",
+                "marginBottom": 10,
+                "textAlign": "center",
+              }
+            }
+          >
+            Age
+          </Text>
+          <Text
+            style={
+              {
+                "color": "black",
+                "textAlign": "center",
+              }
+            }
+          >
+             
+          </Text>
+        </View>
+        <View
+          style={
+            {
+              "backgroundColor": "#5b8db0",
+              "borderRadius": 40,
+              "marginTop": 20,
+              "padding": 20,
+              "shadowColor": "black",
+              "shadowOffset": {
+                "height": 12,
+                "width": 4,
+              },
+              "shadowOpacity": 0.6,
+              "width": "40%",
+            }
+          }
+        >
+          <Text
+            style={
+              {
+                "color": "white",
+                "fontSize": 18,
+                "fontWeight": "bold",
+                "marginBottom": 10,
+                "textAlign": "center",
+              }
+            }
+          >
+            National Team
+          </Text>
+          <Text
+            style={
+              {
+                "color": "black",
+                "textAlign": "center",
+              }
+            }
+          >
+             
+          </Text>
+        </View>
+        <View
+          style={
+            {
+              "backgroundColor": "#5b8db0",
+              "borderRadius": 40,
+              "marginTop": 20,
+              "padding": 20,
+              "shadowColor": "black",
+              "shadowOffset": {
+                "height": 12,
+                "width": 4,
+              },
+              "shadowOpacity": 0.6,
+              "width": "40%",
+            }
+          }
+        >
+          <Text
+            style={
+              {
+                "color": "white",
+                "fontSize": 18,
+                "fontWeight": "bold",
+                "marginBottom": 10,
+                "textAlign": "center",
+              }
+            }
+          >
+            Team
+          </Text>
+          <Text
+            style={
+              {
+                "color": "black",
+                "textAlign": "center",
+              }
+            }
+          >
+             
+          </Text>
+        </View>
+        <View
+          style={
+            {
+              "backgroundColor": "#5b8db0",
+              "borderRadius": 40,
+              "marginTop": 20,
+              "padding": 20,
+              "shadowColor": "black",
+              "shadowOffset": {
+                "height": 12,
+                "width": 4,
+              },
+              "shadowOpacity": 0.6,
+              "width": "40%",
+            }
+          }
+        >
+          <Text
+            style={
+              {
+                "color": "white",
+                "fontSize": 18,
+                "fontWeight": "bold",
+                "marginBottom": 10,
+                "textAlign": "center",
+              }
+            }
+          >
+            Skill
+          </Text>
+          <Text
+            style={
+              {
+                "color": "black",
+                "textAlign": "center",
+              }
+            }
+          />
+        </View>
+        <View
+          style={
+            {
+              "backgroundColor": "#5b8db0",
+              "borderRadius": 40,
+              "marginTop": 20,
+              "padding": 20,
+              "shadowColor": "black",
+              "shadowOffset": {
+                "height": 12,
+                "width": 4,
+              },
+              "shadowOpacity": 0.6,
+              "width": "40%",
+            }
+          }
+        >
+          <Text
+            style={
+              {
+                "color": "white",
+                "fontSize": 18,
+                "fontWeight": "bold",
+                "marginBottom": 10,
+                "textAlign": "center",
+              }
+            }
+          >
+            Value
+          </Text>
+          <Text
+            style={
+              {
+                "color": "black",
+                "textAlign": "center",
+              }
+            }
+          />
+        </View>
+      </View>
+    </View>
+  </View>
+</RCTScrollView>
+`;
