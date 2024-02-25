@@ -1,20 +1,24 @@
 import { View, Text, StyleSheet, Pressable, Image } from "react-native";
 import React from "react";
-import { Foundation } from "@expo/vector-icons";
+import { AntDesign } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { getMatchById, getPlayerById } from "../../redux/matches";
 import moment from "moment";
+import { toggleFavourite } from "../../redux/favorites";
 
 export default function matchCard({ match }) {
+  const { item } = match;
+  const {favorites} = useSelector((state) => state.Favorites);
+  let isFavorite = favorites.includes(item.id)
   const { navigate } = useNavigation();
   const dispatch = useDispatch();
   navigateToDetails = (matchId) => {
     dispatch(getMatchById(matchId));
     dispatch(getPlayerById(matchId));
-    navigate("Match Details", {matchId});
+    navigate("Match Details", { matchId });
   };
-  const { item } = match;
+  
   return (
     <View style={styles.imageBackground}>
       <Pressable
@@ -31,7 +35,7 @@ export default function matchCard({ match }) {
             />
             <Text style={styles.leagueName}>{item?.tournament.name}</Text>
           </View>
-          <Foundation name="star" size={24} color="gray" />
+          <AntDesign onPress={()=>dispatch(toggleFavourite(item.id))} name={isFavorite ? "heart" : "hearto"} size={24} color={isFavorite ? "red" : "black"} />
         </View>
         <View style={styles.teams}>
           <View style={styles.match}>

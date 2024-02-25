@@ -30,7 +30,7 @@ export default function MatchesContainer({filterValue}) {
                 )
           }
           keyExtractor={(match) => match.id.toString()}
-          renderItem={(match) => (<MatchCard match={match}/>)}
+          renderItem={(match) => (<MatchCard match={match} />)}
         />
       )
   }else{
