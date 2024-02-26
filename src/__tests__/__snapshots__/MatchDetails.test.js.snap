@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MatchDetails /> renders failed text when status is not loading or success 1`] = `
+<View>
+  <Text>
+    Failed
+  </Text>
+</View>
+`;
+
+exports[`<MatchDetails /> renders loading text when status is loading 1`] = `
+<View>
+  <Text>
+    Loading ...
+  </Text>
+</View>
+`;

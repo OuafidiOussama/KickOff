@@ -6,7 +6,8 @@ node_modules/
 .expo/
 dist/
 web-build/
-
+#covarage jest
+coverage/
 # Native
 *.orig.*
 *.jks
