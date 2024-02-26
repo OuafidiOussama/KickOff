@@ -2,7 +2,7 @@
 
 ## Description
 
-    Shop Ease is a mobile application that allows users to be Update to date concerning football
+    Kick off is a mobile application that allows users to be Update to date concerning football
     and star players. The application is built using React Native, Expo and Redux Toolkit.
 
 ## Features
