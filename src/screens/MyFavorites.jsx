@@ -1,6 +1,7 @@
 import { View, Text, FlatList, StyleSheet } from 'react-native'
 import { useSelector } from 'react-redux'
 import MatchCard from '../components/cards/MatchCard';
+import React from 'react';
 
 export default function MyFavorites() {
   const {status, matches} = useSelector(state=>state.Matches)
